@@ -79,9 +79,9 @@ export default function Contact() {
       />
 
       <section className="section">
-        <div className="wrap grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <form onSubmit={sendWhatsApp} noValidate className="grid gap-5" aria-label="Enquiry form">
-            <div className="grid gap-5 sm:grid-cols-2">
+        <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+          <form onSubmit={sendWhatsApp} noValidate className="grid grid-cols-1 gap-5 min-w-0" aria-label="Enquiry form">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="name" className="block mb-1.5 font-semibold">Your name</label>
                 <input
@@ -102,7 +102,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <div>
                 <label htmlFor="email" className="block mb-1.5 font-semibold">
                   Email <span className="font-normal text-mute">(optional)</span>
@@ -151,34 +151,34 @@ export default function Contact() {
             </p>
           </form>
 
-          <div className="grid gap-6 content-start">
+          <div className="grid grid-cols-1 gap-6 content-start min-w-0">
             <div className="border-2 border-black p-6">
               <h2 className="text-xl">Reach us directly</h2>
               <ul className="mt-5 space-y-4">
                 <li className="flex gap-3">
                   <Icon name="phone" className="w-5 h-5 mt-0.5 shrink-0 text-brand-deep" />
-                  <div>
+                  <div className="min-w-0 break-words">
                     <p className="text-sm text-mute">Call or WhatsApp {CONTACT_PERSON}</p>
                     <a href={`tel:${PHONE_TEL}`} className="font-semibold hover:text-brand-deep">{PHONE_DISPLAY}</a>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <Icon name="mail" className="w-5 h-5 mt-0.5 shrink-0 text-brand-deep" />
-                  <div>
+                  <div className="min-w-0 break-words">
                     <p className="text-sm text-mute">Email</p>
                     <a href={`mailto:${EMAIL}`} className="font-semibold hover:text-brand-deep break-all">{EMAIL}</a>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <Icon name="globe" className="w-5 h-5 mt-0.5 shrink-0 text-brand-deep" />
-                  <div>
+                  <div className="min-w-0 break-words">
                     <p className="text-sm text-mute">Website</p>
                     <p className="font-semibold">{WEBSITE}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <Icon name="pin" className="w-5 h-5 mt-0.5 shrink-0 text-brand-deep" />
-                  <div>
+                  <div className="min-w-0 break-words">
                     <p className="text-sm text-mute">Visit us</p>
                     <address className="not-italic font-semibold">
                       {ADDRESS_LINES.map((l) => (

@@ -23,7 +23,7 @@ export default function About() {
       />
 
       <section className="section">
-        <div className="wrap grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="space-y-5 text-lg max-w-2xl">
             <p>
               Pyramid Enterprises supplies and supports the equipment a business depends on every day:

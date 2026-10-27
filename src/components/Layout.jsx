@@ -13,10 +13,12 @@ export default function Layout({ children }) {
         Skip to content
       </a>
       <Header />
-      <main id="main" className="page-in pb-16 md:pb-0">
+      <main id="main" className="page-in">
         {children}
       </main>
-      <Footer />
+      <div className="pb-16 md:pb-0 bg-black">
+        <Footer />
+      </div>
       <FloatingContact />
     </>
   );

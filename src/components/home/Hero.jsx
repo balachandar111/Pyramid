@@ -15,7 +15,7 @@ export default function Hero() {
         style={{ clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 0 100%)' }}
         aria-hidden="true"
       />
-      <div className="wrap relative grid gap-12 py-14 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div className="wrap relative grid grid-cols-1 gap-12 py-14 md:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <h1 className="h-display">The hardware and network your business runs on.</h1>
           <p className="lead mt-6">

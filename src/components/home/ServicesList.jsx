@@ -6,7 +6,7 @@ import { SERVICES } from '@/data/pyramidData';
 export default function ServicesList() {
   return (
     <section className="section border-t border-line">
-      <div className="wrap grid gap-10 lg:grid-cols-[0.8fr_1.4fr]">
+      <div className="wrap grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.4fr]">
         <div className="lg:sticky lg:top-28 self-start">
           <h2 className="h-section">What we do for you</h2>
           <p className="lead mt-4">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Logo from '@/components/ui/Logo';
 import Icon, { WhatsAppIcon } from '@/components/ui/Icon';
@@ -35,49 +36,10 @@ export default function Header() {
       isActive ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100'
     }`;
 
-  return (
-    <header
-      className={`sticky top-0 z-50 bg-white/95 backdrop-blur ${
-        scrolled ? 'border-b border-line shadow-sm' : 'border-b border-transparent'
-      }`}
-    >
-      <div className="wrap flex h-[4.25rem] items-center justify-between gap-4">
-        <Link to="/" aria-label="Pyramid Enterprises home" className="shrink-0">
-          <Logo size={44} />
-        </Link>
-
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
-          {NAV_LINKS.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass}>
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-2">
-          <a href={`tel:${PHONE_TEL}`} className="btn btn-line !py-2.5 !px-4">
-            <Icon name="phone" className="w-4 h-4" />
-            {PHONE_DISPLAY}
-          </a>
-          <Link to="/contact" className="btn btn-brand !py-2.5 !px-4">
-            Get a quote
-          </Link>
-        </div>
-
-        <button
-          type="button"
-          className="lg:hidden p-2 -mr-2"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-        >
-          <Icon name="menu" className="w-7 h-7" />
-        </button>
-      </div>
-
-      {/* Mobile drawer */}
+  const drawerNode = createPortal(
+    (
       <div
-        className={`fixed inset-0 z-[60] lg:hidden ${open ? '' : 'pointer-events-none'}`}
+        className={`fixed inset-0 z-[70] lg:hidden transition-[visibility] duration-300 ${open ? 'visible' : 'invisible pointer-events-none'}`}
         aria-hidden={!open}
       >
         <div
@@ -138,6 +100,54 @@ export default function Header() {
           </div>
         </aside>
       </div>
+    ),
+    document.body
+  );
+
+  return (
+    <>
+    <header
+      className={`sticky top-0 z-50 bg-white ${
+        scrolled ? 'border-b border-line shadow-sm' : 'border-b border-transparent'
+      }`}
+    >
+      <div className="wrap flex h-[4.25rem] items-center justify-between gap-4">
+        <Link to="/" aria-label="Pyramid Enterprises home" className="shrink-0">
+          <Logo size={44} />
+        </Link>
+
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+          {NAV_LINKS.map((l) => (
+            <NavLink key={l.to} to={l.to} end={l.to === '/'} className={linkClass}>
+              {l.label}
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="hidden md:flex items-center gap-2">
+          <a href={`tel:${PHONE_TEL}`} className="btn btn-line !py-2.5 !px-4">
+            <Icon name="phone" className="w-4 h-4" />
+            {PHONE_DISPLAY}
+          </a>
+          <Link to="/contact" className="btn btn-brand !py-2.5 !px-4">
+            Get a quote
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          className="lg:hidden p-2 -mr-2"
+          onClick={() => setOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={open}
+        >
+          <Icon name="menu" className="w-7 h-7" />
+        </button>
+      </div>
+
     </header>
+
+    {drawerNode}
+    </>
   );
 }

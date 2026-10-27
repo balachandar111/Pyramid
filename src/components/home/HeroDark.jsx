@@ -63,7 +63,7 @@ export default function HeroDark() {
         }}
       />
 
-      <div className="wrap relative grid gap-10 py-14 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className="wrap relative grid grid-cols-1 gap-10 py-14 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <div>
           <p className="inline-flex items-center gap-2 border border-white/25 px-3 py-1.5 text-sm text-white/85">
             <span className="h-2 w-2 rounded-full bg-brand pulse-dot" aria-hidden="true" />
@@ -107,7 +107,7 @@ export default function HeroDark() {
         </div>
 
         {/* interactive logo mark */}
-        <div className="relative mx-auto w-full max-w-[34rem]">
+        <div className="relative mx-auto w-full max-w-[19rem] sm:max-w-[24rem] lg:max-w-[34rem]">
           <svg
             viewBox="200 -20 1050 820"
             className="w-full drop-shadow-[0_0_60px_rgba(255,143,15,0.25)]"
@@ -141,7 +141,7 @@ export default function HeroDark() {
       </div>
 
       <div className="relative border-t border-white/15">
-        <div className="wrap grid gap-x-8 gap-y-3 py-5 text-sm text-white/80 sm:grid-cols-3">
+        <div className="wrap grid grid-cols-1 gap-x-8 gap-y-3 py-5 text-sm text-white/80 sm:grid-cols-3">
           <a href={`tel:${PHONE_TEL}`} className="flex items-center gap-2.5 hover:text-brand transition-colors">
             <Icon name="phone" className="w-5 h-5 text-brand" /> Call {PHONE_DISPLAY}
           </a>

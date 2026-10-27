@@ -5,7 +5,7 @@ import { WHY } from '@/data/pyramidData';
 export default function WhyPyramid() {
   return (
     <section className="section bg-sand border-y border-line">
-      <div className="wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <h2 className="h-section">What you can expect when you work with us</h2>
           <p className="lead mt-4">

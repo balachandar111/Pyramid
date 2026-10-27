@@ -30,7 +30,7 @@ export default function Faq() {
 
   return (
     <section className="section">
-      <div className="wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="wrap grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <h2 className="h-section">Questions people ask us</h2>
           <p className="lead mt-4">Cannot find your answer? Call or message us and we will help.</p>

@@ -34,7 +34,7 @@ export default function SetupPlanner() {
 
   return (
     <section id="plan" className="section bg-sand border-y border-line">
-      <div className="wrap grid gap-10 lg:grid-cols-[1.35fr_0.9fr]">
+      <div className="wrap grid grid-cols-1 gap-10 lg:grid-cols-[1.35fr_0.9fr]">
         <Reveal>
           <h2 className="h-section max-w-xl">Plan your setup and get a quote</h2>
           <p className="lead mt-4">
@@ -61,41 +61,41 @@ export default function SetupPlanner() {
             </div>
           </fieldset>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {ITEMS.map((it) => {
               const n = qty[it.id] || 0;
               const on = n > 0;
               return (
                 <li
                   key={it.id}
-                  className={`flex items-center gap-4 border-2 p-4 transition-colors ${
+                  className={`flex items-center gap-2.5 border-2 p-3 sm:gap-4 sm:p-4 transition-colors ${
                     on ? 'border-black bg-black text-white' : 'border-line bg-white'
                   }`}
                 >
-                  <span className={`grid h-11 w-11 shrink-0 place-items-center ${on ? 'bg-brand text-black' : 'bg-sand'}`}>
+                  <span className={`grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center ${on ? 'bg-brand text-black' : 'bg-sand'}`}>
                     <Icon name={it.icon} className="w-6 h-6" />
                   </span>
-                  <span className="flex-1 font-semibold leading-snug">{it.label}</span>
-                  <span className="flex items-center gap-1.5">
+                  <span className="min-w-0 flex-1 text-[0.95rem] sm:text-base font-semibold leading-snug">{it.label}</span>
+                  <span className="flex shrink-0 items-center gap-1">
                     <button
                       type="button"
                       onClick={() => change(it.id, -1)}
                       disabled={!on}
                       aria-label={`Fewer ${it.unit}`}
-                      className={`h-9 w-9 text-xl font-bold border-2 transition-colors disabled:opacity-30 ${
+                      className={`h-8 w-8 sm:h-9 sm:w-9 text-xl font-bold border-2 transition-colors disabled:opacity-30 ${
                         on ? 'border-white/50 hover:bg-white hover:text-black' : 'border-line'
                       }`}
                     >
                       −
                     </button>
-                    <span className="w-8 text-center font-display text-lg font-extrabold" aria-live="polite">
+                    <span className="w-6 sm:w-8 text-center font-display text-lg font-extrabold" aria-live="polite">
                       {n}
                     </span>
                     <button
                       type="button"
                       onClick={() => change(it.id, 1)}
                       aria-label={`More ${it.unit}`}
-                      className="h-9 w-9 bg-brand text-xl font-bold text-black hover:bg-[#ffa23a] transition-colors"
+                      className="h-8 w-8 sm:h-9 sm:w-9 bg-brand text-xl font-bold text-black hover:bg-[#ffa23a] transition-colors"
                     >
                       +
                     </button>
